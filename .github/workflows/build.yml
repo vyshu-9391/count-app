@@ -26,7 +26,7 @@ jobs:
 
       - name: Commit and push build files
         run: |
-          git config --global user.name 'vyshu-9391'
+          git config --global user.name 'Darsi raga vyshnavi'
           git config --global user.email 'vyshudarsi@gmail.com'
           git add .
           git commit -m 'Automated build files update'
