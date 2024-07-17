@@ -30,6 +30,7 @@ jobs:
         run: |
           git config --global user.name 'vyshu-9391'
           git config --global user.email 'vyshudarsi@gmail.com'
+          git add build/
           git add .
           git commit -m 'Automated build files update'
           git push
