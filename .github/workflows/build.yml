@@ -30,8 +30,8 @@ jobs:
           git config --global user.email 'vyshudarsi@gmail.com'
           git add .
           git commit -m 'Automated build files update'
-          git push origin HEAD:${{ github.ref }}
+          git push origin HEAD:${{ main }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ghp_gmPEtoIkFPTSB0ZQUbN3BmveVOt3Xn1hGS6k}}
 
     
