@@ -32,7 +32,7 @@ jobs:
           git config --global user.email 'vyshudarsi@gmail.com'
           git add .
           git commit -m 'Automated build files update'
-          git push 
+          git push
       
 
     
