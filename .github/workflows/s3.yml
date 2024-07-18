@@ -11,8 +11,9 @@ jobs:
 
     steps:
     - name: Configure AWs Credentials 
-      uses: aws-actions/configure-aws-credentials@v4
+      uses: aws-actions/configure-aws-credentials@v2
       with:
+        token: ${{ secrets.PAT_TOKEN }}
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secrete-access-key: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
         aws-region: eu-north-1
