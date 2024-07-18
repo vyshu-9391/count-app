@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout 
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         
       - name: Configure AWs Credentials 
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secrete-access-key: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
