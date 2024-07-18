@@ -9,16 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout 
-        uses: actions/checkout@v2
+    steps: 
+      
         
-      - name: Configure AWs Credentials 
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secrete-access-key: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
-          aws-region: eu-north-1
+       - name: Configure AWs Credentials 
+         uses: aws-actions/configure-aws-credentials@v2
+          with:
+           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+           aws-secrete-access-key: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
+           aws-region: eu-north-1
 
       - name: Deploy static site to s3 bucket
         run : aws s3 sync ./ s3://vyshnavi-1 --delete
