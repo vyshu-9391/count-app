@@ -11,11 +11,11 @@ jobs:
 
     steps:
     - name: Configure AWs Credentials 
-      uses: aws-actions/configure-aws-credentials@v2
+      uses: aws-actions/configure-aws-credentials@v3
       with:
         token: ${{ secrets.PAT_TOKEN }}
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secrete-access-key: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
+        if aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        if aws-secrete-access-key: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
         aws-region: eu-north-1
 
     - name: Deploy static site to s3 bucket
