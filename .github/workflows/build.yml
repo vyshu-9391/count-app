@@ -1,4 +1,4 @@
-name: Build and Upload
+name: deploy and folder
 
 on:
   push:
@@ -27,14 +27,12 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Commit and push build files
+      - name: deploy build folder
         run: |
           git config --global user.name 'vyshu-9391'
           git config --global user.email 'vyshudarsi@gmail.com'         
-          git add build/
-          git add .
-          git commit -m 'Automated build files update'
-          git push 
+          
+          
 
 
     
