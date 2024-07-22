@@ -1,4 +1,4 @@
-name: upload to s3
+name: Deploy to S3
 
 on:
   push:
@@ -6,26 +6,27 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout repository
+    - name: Checkout repository
       uses: actions/checkout@v4
-      
-    - name: Configure AWs Credentials 
+
+    - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
-        token: ${{ secrets.PAT_TOKEN }}
-        if aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        if aws-secrete-access-key: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
-        aws-region: eu-north-1
-        
-    - name: verify build directory
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-south-1
+
+    - name: Print environment variables
+      run: printenv
+
+    - name: Verify build directory
       run: ls -la ./build
 
-    - name: Deploy static site to s3 bucket
-      run : aws s3 sync ./build s3://vyshnavi-1 
-      
-        
-       -
+    - name: Sync files to S3 with debug
+      run: |
+        set -x
+        aws s3 sync ./build s3://vyshnavi-1
