@@ -10,11 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+ 
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT_TOKEN }}
           ref: production        
+ 
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -35,8 +43,5 @@ jobs:
           git add .
           git commit -m 'Automated build files update'
           git push
-          
-          
-
 
     
