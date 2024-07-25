@@ -3,6 +3,6 @@ os: linux
 
 files:
   - source: /
-    destination: /vyshnavi-build/count-app/
+    destination: /home/ec2-user/count-app
 
    
